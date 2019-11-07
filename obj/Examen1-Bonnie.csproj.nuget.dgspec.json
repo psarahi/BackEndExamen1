@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj": {}
+    "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj": {}
   },
   "projects": {
-    "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj": {
+    "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj",
+        "projectUniqueName": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj",
         "projectName": "Examen1-Bonnie",
-        "projectPath": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj",
+        "projectPath": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj",
         "packagesPath": "C:\\Users\\lesly\\.nuget\\packages\\",
-        "outputPath": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\obj\\",
+        "outputPath": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lesly\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,34 @@
             "MathParser.org-mXparser": {
               "target": "Package",
               "version": "[4.3.3, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.112, )"
             }
           },
           "imports": [

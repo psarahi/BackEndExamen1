@@ -27,12 +27,12 @@ namespace Examen1_Bonnie.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-        
-         var rng = new Random();
 
-         Expression eh = new Expression("pi * 100");
-        //  String h = mXparser.numberToAsciiString(eh.calculate());
-         var result =  eh.calculate().ToString();
+            var rng = new Random();
+
+            Expression eh = new Expression("pi * 100");
+            //  String h = mXparser.numberToAsciiString(eh.calculate());
+            var result = eh.calculate().ToString();
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
