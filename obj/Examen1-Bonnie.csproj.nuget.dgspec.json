@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj": {}
+  },
+  "projects": {
+    "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj",
+        "projectName": "Examen1-Bonnie",
+        "projectPath": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\Examen1-Bonnie.csproj",
+        "packagesPath": "C:\\Users\\lesly\\.nuget\\packages\\",
+        "outputPath": "D:\\Vanguardia_Project\\Examen1\\Examen1-Bonnie\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lesly\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "MathParser.org-mXparser": {
+              "target": "Package",
+              "version": "[4.3.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
