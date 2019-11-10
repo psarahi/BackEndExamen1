@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using BackEndExamen1.Data.UnitsOfWork;
+using BackEndExamen1.Data.Repositories;
 
 namespace Examen1_Bonnie
 {
@@ -31,6 +33,8 @@ namespace Examen1_Bonnie
             services.AddDbContext<BackEndExamen1.Data.DataContext>
             (x => x.UseSqlite(Configuration
                 .GetConnectionString("DefaultConnection")));
+            services.AddScoped<IHistorialRepository, HistorialRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllers();
         }
 

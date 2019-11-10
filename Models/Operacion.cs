@@ -2,11 +2,11 @@ using System;
 
 namespace BackEndExamen1.Models
 {
-    public class Historial
+    public class Operacion
     {
         public int Id { get; set; }
         
-        public string Operacion { get; set; }
+        public string expresion { get; set; }
 
         public string Resultado { get; set; }
 

@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BackEndExamen1.Data;
+using BackEndExamen1.Data.UnitsOfWork;
 using BackEndExamen1.Models;
+using BackEndExamen1.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,51 +18,54 @@ namespace BackEndExamen1.Controllers
     public class HistorialController : ControllerBase
     {
 
+        private readonly IUnitOfWork _unitOfWork;
         private readonly DataContext _context;
-        public HistorialController(DataContext context)
+        public HistorialController(IUnitOfWork unitOfWork, DataContext context)
         {
+            _unitOfWork = unitOfWork;
             _context = context;
-
         }
 
         public async Task<IActionResult> GetAll()
         {
-            // var Categorias = await _context.Historiales.ToListAsync();
-            // return Ok(Categorias);
-            return Ok();
+            var historial = await _unitOfWork.Historial.GetAll();
+            return Ok(historial);
         }
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Historial>> GetHistorialById(int id)
+        public async Task<ActionResult<Operacion>> GetOperacionById(int id)
         {
-            var Historial = await _context.Historiales.FindAsync(id);
+            var operacion = await _unitOfWork.Historial.GetById(id);
 
-            if (Historial == null)
+            if (operacion == null)
             {
                 return NotFound();
             }
 
-            return Historial;
+            return Ok(operacion);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Historial>> PostHistorial(Historial Historial)
+        public async Task<ActionResult<Operacion>> PostOperacion(Operacion operacion)
         {
-            _context.Historiales.Add(Historial);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetHistorialById), new { id = Historial.Id }, Historial);
+            // _context.Historial.Add(operacion);
+            // await _context.SaveChangesAsync();
+            await _unitOfWork.Historial.Add(operacion); 
+            await _unitOfWork.Complete();
+            // return CreatedAtAction(nameof(GetOperacionById), new { id = operacion.Id }, operacion);
+            return Ok(operacion);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutHistorial(int id, Historial Historial)
+        public async Task<IActionResult> PutOperacion(int id, Operacion operacion)
         {
-            if (id != Historial.Id)
+            if (id != operacion.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(Historial).State = EntityState.Modified;
+            _context.Entry(operacion).State = EntityState.Modified;
 
             try
             {
@@ -76,19 +80,19 @@ namespace BackEndExamen1.Controllers
 
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Historial>> DeleteHistorial(int id)
+        public async Task<ActionResult<Operacion>> DeleteOperacion(int id)
         {
-            var Historial = await _context.Historiales.FindAsync(id);
+            var operacion = await _context.Historial.FindAsync(id);
 
-            if (Historial == null)
+            if (operacion == null)
             {
                 return NotFound();
             }
 
-            _context.Historiales.Remove(Historial);
+            _context.Historial.Remove(operacion);
             await _context.SaveChangesAsync();
 
-            return Historial;
+            return operacion;
         }
 
     }

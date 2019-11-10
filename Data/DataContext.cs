@@ -5,11 +5,11 @@ namespace BackEndExamen1.Data
 {
     public class DataContext : DbContext
     {
-        public DbSet<Historial> Historiales { get; set; }
+        public DbSet<Operacion> Historial { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
+            
         }
 
     }

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using org.mariuszgromada.math.mxparser;
+using BackEndExamen1.Data.UnitsOfWork;
 
 namespace BackEndExamen1.Controllers
 {
@@ -18,13 +19,14 @@ namespace BackEndExamen1.Controllers
     {
 
         private readonly DataContext _context;
-        public CalculadoraController(DataContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        public CalculadoraController(DataContext context, IUnitOfWork unitOfWork)
         {
             _context = context;
-
+            _unitOfWork = unitOfWork;
         }
 
-         public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             // var Categorias = await _context.Historiales.ToListAsync();
             // return Ok(Categorias);
@@ -32,14 +34,16 @@ namespace BackEndExamen1.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Historial>> Post(Historial historial)
-        {   
-            Expression eh = new Expression(historial.Operacion);
-            historial.Resultado = eh.calculate().ToString();
-            historial.Fecha = DateTime.Today;
-            _context.Historiales.Add(historial);
-            await _context.SaveChangesAsync();
-            return Ok(historial.Resultado);
+        public async Task<ActionResult<Operacion>> Post(Operacion operacion)
+        {
+            // Expression eh = new Expression(operacion.expresion);
+            // operacion.Resultado = eh.calculate().ToString();
+            // operacion.Fecha = DateTime.Today;
+            // _context.Historial.Add(operacion);
+            // await _context.SaveChangesAsync();
+            Operacion _result = await _unitOfWork.Calculate(operacion);
+            _unitOfWork.Complete();
+            return Ok(_result.Resultado);
             // return CreatedAtAction(nameof(GetHistorialById), new { id = Historial.Id }, Historial);
         }
 
