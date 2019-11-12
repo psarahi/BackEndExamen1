@@ -17,34 +17,20 @@ namespace BackEndExamen1.Controllers
     [ApiController]
     public class CalculadoraController : ControllerBase
     {
-
-        private readonly DataContext _context;
         private readonly IUnitOfWork _unitOfWork;
-        public CalculadoraController(DataContext context, IUnitOfWork unitOfWork)
+        public CalculadoraController( IUnitOfWork unitOfWork)
         {
-            _context = context;
             _unitOfWork = unitOfWork;
-        }
-
-        public async Task<IActionResult> GetAll()
-        {
-            // var Categorias = await _context.Historiales.ToListAsync();
-            // return Ok(Categorias);
-            return Ok();
         }
 
         [HttpPost]
         public async Task<ActionResult<Operacion>> Post(Operacion operacion)
         {
-            // Expression eh = new Expression(operacion.expresion);
-            // operacion.Resultado = eh.calculate().ToString();
-            // operacion.Fecha = DateTime.Today;
-            // _context.Historial.Add(operacion);
-            // await _context.SaveChangesAsync();
+
             Operacion _result = await _unitOfWork.Calculate(operacion);
-            _unitOfWork.Complete();
-            return Ok(_result.Resultado);
-            // return CreatedAtAction(nameof(GetHistorialById), new { id = Historial.Id }, Historial);
+            await _unitOfWork.Complete();
+            return Ok(_result);
+
         }
 
 

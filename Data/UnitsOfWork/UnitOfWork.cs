@@ -35,7 +35,7 @@ namespace BackEndExamen1.Data.UnitsOfWork
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

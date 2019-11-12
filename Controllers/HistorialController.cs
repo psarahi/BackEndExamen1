@@ -49,11 +49,9 @@ namespace BackEndExamen1.Controllers
         [HttpPost]
         public async Task<ActionResult<Operacion>> PostOperacion(Operacion operacion)
         {
-            // _context.Historial.Add(operacion);
-            // await _context.SaveChangesAsync();
+
             await _unitOfWork.Historial.Add(operacion); 
             await _unitOfWork.Complete();
-            // return CreatedAtAction(nameof(GetOperacionById), new { id = operacion.Id }, operacion);
             return Ok(operacion);
         }
 

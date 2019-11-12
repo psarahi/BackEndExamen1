@@ -1483,19 +1483,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/alvaro/.nuget/packages/": {}
+    "C:\\Users\\lesly\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alvaro/WorkDocuments/DevProjects/BackEndExamen1/Examen1-Bonnie.csproj",
+      "projectUniqueName": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj",
       "projectName": "Examen1-Bonnie",
-      "projectPath": "/Users/alvaro/WorkDocuments/DevProjects/BackEndExamen1/Examen1-Bonnie.csproj",
-      "packagesPath": "/Users/alvaro/.nuget/packages/",
-      "outputPath": "/Users/alvaro/WorkDocuments/DevProjects/BackEndExamen1/obj/",
+      "projectPath": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\Examen1-Bonnie.csproj",
+      "packagesPath": "C:\\Users\\lesly\\.nuget\\packages\\",
+      "outputPath": "D:\\Vanguardia_Project\\Examen1\\BackEndExamen1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alvaro/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lesly\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -1568,7 +1568,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
